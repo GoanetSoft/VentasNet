@@ -1,16 +1,56 @@
-﻿using VentasNet.Infra.DTO.Request;
+﻿using Microsoft.EntityFrameworkCore;
+using VentasNet.Entity.Data;
+using VentasNet.Infra.DTO.Request;
 
 namespace VentasNet.Infra.Repositories
 {
     public class VentaRepo
     {
-        private VentaReq _venta = new VentaReq();
-        public VentaRepo() { }
+        private readonly VentasNetContext _context;
 
-        public VentaReq VentaMostrador()
+        public VentaRepo(VentasNetContext context)
         {
-            return _venta;
-           
+            _context = context;
+
+        }
+
+        public int? GetUltimoComprobante(string tipoFactura)
+        {
+            int? nroCbte =null;
+            var comprobante = _context.VwComprobantes.Where(x => x.NombreCorto == tipoFactura).FirstOrDefault();
+
+            if (comprobante != null)
+            {
+                nroCbte = comprobante.NroUltimoCbte;
+            }
+
+            return nroCbte;
+        }
+
+        public int? GetProximoComprobante(string tipoFactura)
+        {
+            int? nroCbte = null;
+            var comprobante = _context.VwComprobantes.Where(x => x.NombreCorto == tipoFactura).FirstOrDefault();
+
+            if (comprobante != null)
+            {
+                nroCbte = comprobante.NroUltimoCbte + 1;
+            }
+
+            return nroCbte;
+        }
+
+        public int? GetSucursal(string tipoFactura)
+        {
+            int? nroCbte = null;
+            var comprobante = _context.VwComprobantes.Where(x => x.NombreCorto == tipoFactura).FirstOrDefault();
+
+            if (comprobante != null)
+            {
+                nroCbte = comprobante.NroUltimoCbte + 1;
+            }
+
+            return nroCbte;
         }
     }
 }
