@@ -1,0 +1,71 @@
+﻿@using VentasNet.Infra.DTO.Request;
+@model IEnumerable<ClienteReq>  //se usa como lista normalmente del lado de la vista
+
+@*
+<h2>Cargar Clientes</h2>
+<form method="post">
+
+    <input type="number" id= "id" name="Id" />
+    <input type="Text" name="RazonSOcial" />
+    <input type="Text" name="Domicilio" />
+    <input type="Text" name="Cuit" />
+    <input type="Text" name="Provincia" />
+
+     @*Agregar funcion con javascrip o con @html.button de razor y complegisar gilla con buscador etc*@
+    
+@*   <button type="button" onclick="location.href='@Url.Action("GuardarCliente","Cliente", new Cliente{Id=Model.Id})'">AgregarUsando</button>
+</form>
+*@
+
+@{
+    var clienteReq = new ClienteReq();
+}
+
+
+
+
+<h2>Listado de Clientes</h2>
+
+<table class="table">
+
+    <thead>  @*Creo la cabecera de mi grilla*@
+        <tr>
+            @* <th>@Html.DisplayNameFor(model => model.Id)</th>  *@@*Display name trae el decorado del atributo, si no lo tiene trae el nombre del atributo*@
+            <th>@Html.DisplayNameFor(model => model.RazonSocial)</th>
+            <th>@Html.DisplayNameFor(model => model.Domicilio)</th>
+            <th>@Html.DisplayNameFor(model => model.Cuil)</th>
+            <th>@Html.DisplayNameFor(model => model.Provincia)</th>
+        </tr>
+    </thead>
+    
+    @*Para recorrer mi lista hasta que se termine ocupamos el foreach*@
+    @{
+        if ((ViewBag.Cliente != null))
+        {
+                 
+            foreach (ClienteReq cliente in ViewBag.Cliente)  
+            @*cliente va a tener todos los datos de ese cliente en esa vuelta *@
+            {
+                
+                    @*Le debo decir que en cada celda me agregue un dato*@
+                <tr>
+                        @*<td>@cliente.Id</td>*@
+                    <td>@cliente.RazonSocial</td>
+                    <td>@cliente.Domicilio</td>
+                    <td>@cliente.Cuil</td>
+                    <td>@cliente.Provincia</td>
+                    <td>
+                        @Html.ActionLink("Modificar", "Modificar","Cliente",cliente, new {@class="btn btn-primary"})  @*nombre,metodo del controlador*@
+                        @Html.ActionLink("Borrar", "Delete", "Cliente",cliente, new {@class="btn btn-danger"})
+                    </td>
+                    
+                </tr>
+                
+            }
+
+        }
+    }
+
+
+
+</table>

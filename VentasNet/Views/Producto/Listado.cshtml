@@ -1,0 +1,50 @@
+﻿@using VentasNet.Infra.DTO.Request;
+@model IEnumerable<ProductoReq>
+
+
+<h2>Listado de Producto</h2>
+
+<table class="table">
+
+    <thead>
+
+        <tr>
+          @*   <th>@Html.DisplayNameFor(model => model.Id)</th> *@
+            <th>@Html.DisplayNameFor(model => model.IdProveedor)</th>
+            <th>@Html.DisplayNameFor(model => model.NombreProducto)</th>
+            <th>@Html.DisplayNameFor(model => model.Descripcion)</th>
+            <th>@Html.DisplayNameFor(model => model.ImporteProducto)</th>
+        </tr>
+    </thead>
+
+
+    @{
+        if ((ViewBag.Producto != null))
+        {
+
+            foreach (ProductoReq producto in ViewBag.Producto)
+
+            {
+
+
+                <tr>
+                    @*<td>@producto.Id</td>*@
+                    <td>@producto.IdProveedor</td>
+                    <td>@producto.NombreProducto</td>
+                    <td>@producto.Descripcion</td>
+                    <td>@producto.ImporteProducto</td>
+                    <td>
+                        @Html.ActionLink("Modificar", "Modificar","Producto",producto, new {@class="btn btn-primary"})
+                        @Html.ActionLink("Borrar", "Delete", "Producto",producto, new {@class="btn btn-danger"})
+                    </td>
+
+                </tr>
+
+            }
+
+        }
+    }
+
+
+
+</table>

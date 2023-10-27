@@ -1,0 +1,58 @@
+﻿@using VentasNet.Infra.DTO.Request;
+@model ClienteReq
+
+<h2>Agregar Cliente</h2>
+
+
+@using (Html.BeginForm("UpdateCliente", "Cliente", FormMethod.Post))
+{
+
+    @* @Html.LabelFor(model => model.Id)
+    <br>
+    @Html.TextBoxFor(model => model.Id)
+    <br> *@
+
+    @Html.LabelFor(model => model.Nombre)
+    <br>
+    @Html.TextBoxFor(model => model.Nombre)
+    <br>
+
+    @Html.LabelFor(model => model.Apellido)
+    <br>
+    @Html.TextBoxFor(model => model.Apellido)
+    <br>
+
+    @Html.LabelFor(model => model.RazonSocial)
+    <br>
+    @Html.TextBoxFor(model => model.RazonSocial)
+    <br>
+
+    @Html.LabelFor(model => model.Cuil)
+    <br>
+    @Html.TextBoxFor(model => model.Cuil)
+    <br>
+
+    @Html.LabelFor(model => model.Domicilio)
+    <br>
+    @Html.TextBoxFor(model => model.Domicilio)
+    <br>
+
+    @Html.LabelFor(model => model.Localidad)
+    <br>
+    @Html.TextBoxFor(model => model.Localidad)
+    <br>
+
+    @Html.LabelFor(model => model.Provincia)
+    <br>
+    @Html.TextBoxFor(model => model.Provincia)
+    <br>
+
+    @Html.LabelFor(model => model.Telefono)
+    <br>
+    @Html.TextBoxFor(model => model.Telefono)
+    <br>
+
+    <br>
+
+    <button type="submit">Guardar</button>
+}

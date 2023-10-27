@@ -1,0 +1,38 @@
+﻿@using VentasNet.Infra.DTO.Request;
+@model ProductoReq
+
+<h2>Agregar Producto</h2>
+
+
+
+@using (Html.BeginForm("Edit", "Producto", FormMethod.Post))
+{
+
+    @* @Html.LabelFor(model => model.Id)
+    <br>
+    @Html.TextBoxFor(model => model.Id)
+    <br> *@
+
+    @* @Html.LabelFor(model => model.IdProveedor)
+    <br>
+    @Html.TextBoxFor(model => model.IdProveedor)
+    <br> *@
+
+    @Html.LabelFor(model => model.NombreProducto)
+    <br>
+    @Html.TextBoxFor(model => model.NombreProducto)
+    <br>
+
+    @Html.LabelFor(model => model.Descripcion)
+    <br>
+    @Html.TextBoxFor(model => model.Descripcion)
+    <br>
+
+    @Html.LabelFor(model => model.ImporteProducto)
+    <br>
+    @Html.TextBoxFor(model => model.ImporteProducto)
+    <br>
+    <br>
+
+    <button type="submit">Guardar</button>
+}

@@ -1,0 +1,81 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "VentasNetContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": "Data",
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "VentasNet.Entity",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[Cliente]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Comprobante]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[FormaDePagos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[MovimientosDeComprobantes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[MovimientosDeProveedores]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Producto]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Proveedor]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Stock]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Usuario]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[vwComprobantes]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[vwUsuario]",
+         "ObjectType": 3
+      }
+   ],
+   "UiHint": "goanet\\goanet.VentasNetSimon.dbo",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": true,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false,
+   "UseT4": false
+}

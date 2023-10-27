@@ -1,0 +1,38 @@
+﻿@using VentasNet.Infra.DTO.Request;
+@model ProveedorReq
+
+<h2>Agregar Proveedor</h2>
+
+
+
+@using (Html.BeginForm("Edit", "Proveedor", FormMethod.Post))
+{
+
+    @* @Html.LabelFor(model => model.Id)
+    <br>
+    @Html.TextBoxFor(model => model.Id)
+    <br> *@
+
+    @Html.LabelFor(model => model.RazonSocial)
+    <br>
+    @Html.TextBoxFor(model => model.RazonSocial)
+    <br>
+
+    @Html.LabelFor(model => model.Domicilio)
+    <br>
+    @Html.TextBoxFor(model => model.Domicilio)
+    <br>
+
+    @Html.LabelFor(model => model.Cuit)
+    <br>
+    @Html.TextBoxFor(model => model.Cuit)
+    <br>
+
+    @Html.LabelFor(model => model.Provincia)
+    <br>
+    @Html.TextBoxFor(model => model.Provincia)
+    <br>
+    <br>
+
+    <button type="submit">Guardar</button>
+}

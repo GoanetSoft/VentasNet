@@ -1,0 +1,50 @@
+﻿@using VentasNet.Infra.DTO.Request;
+@model IEnumerable<ProveedorReq>
+
+
+<h2>Listado de Proveedores</h2>
+
+<table class="table">
+
+    <thead>
+        
+        <tr>
+@*             <th>@Html.DisplayNameFor(model => model.Id)</th> 
+ *@            <th>@Html.DisplayNameFor(model => model.RazonSocial)</th>
+            <th>@Html.DisplayNameFor(model => model.Domicilio)</th>
+            <th>@Html.DisplayNameFor(model => model.Cuit)</th>
+            <th>@Html.DisplayNameFor(model => model.Provincia)</th>
+        </tr>
+    </thead>
+
+    
+    @{
+        if ((ViewBag.Proveedor != null))
+        {
+
+            foreach (ProveedorReq proveedor in ViewBag.Proveedor)
+            
+            {
+
+                
+                <tr>
+                    @*<td>@proveedor.Id</td>*@
+                    <td>@proveedor.RazonSocial</td>
+                    <td>@proveedor.Domicilio</td>
+                    <td>@proveedor.Cuit</td>
+                    <td>@proveedor.Provincia</td>
+                    <td>
+                        @Html.ActionLink("Modificar", "Modificar","Proveedor",proveedor, new {@class="btn btn-primary"})
+                        @Html.ActionLink("Borrar", "Delete", "Proveedor",proveedor, new {@class="btn btn-danger"})
+                    </td>
+
+                </tr>
+
+            }
+
+        }
+    }
+
+
+
+</table>
